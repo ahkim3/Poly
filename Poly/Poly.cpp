@@ -1,6 +1,6 @@
 /*
 Name: Andrew Kim
-Date: April 14, 2021
+Date: April 15, 2021
 Program: Poly Lab
 
 I hereby certify that this program represents my
@@ -13,6 +13,10 @@ Signature: Andrew Kim
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include "Shape.h"
+#include "Circle.h"
+#include "Triangle.h"
+
 
 int main()
 {
