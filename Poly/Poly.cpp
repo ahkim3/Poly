@@ -19,11 +19,12 @@ Signature: Andrew Kim
 
 using namespace std;
 
+void determineShapes(vector<Shape*>&, unsigned int);
+
 
 int main()
 {
-    unsigned int shapeCount = 0, shapesRemaining, shapeType, radius, base, 
-        height;
+    unsigned int shapesRemaining;
     vector<Shape*> shapes;
     
     // Determine number of desired shapes
@@ -31,53 +32,8 @@ int main()
     cin >> shapesRemaining;
     system("cls");
 
-    // Determine desired shapes
-    while (shapesRemaining > 0)
-    {
-        cout << "This is Shape " << ++shapeCount << '.' << endl << endl;
-        shapesRemaining--;
+    determineShapes(shapes, shapesRemaining);
 
-        cout << "Options:\n1) Circle\n2) Triangle\n3) Square\n\n";
-        cout << "Please enter the corresponding # to your desired shape: ";
-        cin >> shapeType;
-
-        switch (shapeType)
-        {
-        case 1: // Circle
-            cout << "Plase enter the radius of this circle: ";
-            cin >> radius;
-
-            shapes.push_back(new Circle(radius));
-            break;
-
-        case 2: // Triangle
-            cout << "Plase enter the radius of this triangle: ";
-            cin >> base;
-            cout << "Please enter the height of this triangle: ";
-            cin >> height;
-
-            shapes.push_back(new Triangle(base, height));
-            break;
-
-        case 3: // Square
-            // TODO
-            break;
-
-        default:
-            cout << "That was not a valid option. Please try again." << endl;
-            
-            // Reset this iteration so the user can try again
-            shapesRemaining++;
-            shapeCount--;
-
-            system("pause");
-            break;
-        }
-
-        cout << endl << endl << endl;
-    }
-
-    
     sf::RenderWindow window(sf::VideoMode(400, 400), "Poly");
 
     // Test
@@ -102,4 +58,62 @@ int main()
     }
 
     return 0;
+}
+
+
+// Determine user's desired shapes
+void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
+{
+    unsigned int shapeCount = 0, shapeType, radius, base, height;
+
+    // Determine desired shapes
+    while (shapesRemaining > 0)
+    {
+        // Identify current shape selection
+        cout << "This is Shape " << ++shapeCount << '.' << endl << endl;
+        shapesRemaining--;
+
+        // Prompt shape options
+        cout << "Options:\n1) Circle\n2) Triangle\n3) Square\n\n";
+        cout << "Please enter the corresponding # to your desired shape: ";
+        cin >> shapeType;
+
+        // Determine shape choice
+        switch (shapeType)
+        {
+        case 1: // Circle
+            cout << "Plase enter the radius of this circle: ";
+            cin >> radius;
+
+            shapes.push_back(new Circle(radius));
+            break;
+
+        case 2: // Triangle
+            cout << "Plase enter the radius of this triangle: ";
+            cin >> base;
+            cout << "Please enter the height of this triangle: ";
+            cin >> height;
+
+            shapes.push_back(new Triangle(base, height));
+            break;
+
+        case 3: // Square
+            // TODO
+            break;
+
+        default:
+            cout << "That was not a valid option. Please try again." << endl;
+
+            // Reset this iteration so the user can try again
+            shapesRemaining++;
+            shapeCount--;
+
+            system("pause");
+            break;
+        }
+
+        cout << endl << endl << endl;
+    }
+
+    return;
 }
