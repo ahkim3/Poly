@@ -13,6 +13,7 @@ Signature: Andrew Kim
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <Windows.h>
 #include "Shape.h"
 #include "TwoDimension.h"
 #include "Circle.h"
@@ -25,7 +26,7 @@ void determineShapes(vector<Shape*>&, unsigned int);
 
 int main()
 {
-    unsigned int shapesRemaining;
+    unsigned int shapesRemaining, shapeCount = 0;
     vector<Shape*> shapes;
     
     // Determine number of desired shapes
@@ -54,8 +55,19 @@ int main()
         }
 
         window.clear();
+
         window.draw(shape);
+        
         window.display();
+
+        Sleep(5000); // Pause for 5 seconds
+
+        // Move onto next shape in vector; moves back to beginning of list if
+        // at the end
+        if (shapeCount < shapes.size() - 1)
+            shapeCount = 0;
+        else
+            shapeCount++;
     }
 
     return 0;
