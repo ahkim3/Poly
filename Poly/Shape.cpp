@@ -4,7 +4,7 @@
 Shape::Shape()
 {
 	// TODO: Implement randomness
-
+	xPos = 1, yPos = 1;
 }
 
 

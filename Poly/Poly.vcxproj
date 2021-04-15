@@ -155,11 +155,13 @@
     <ClCompile Include="Poly.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="TwoDimension.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Triangle.h" />
+    <ClInclude Include="TwoDimension.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

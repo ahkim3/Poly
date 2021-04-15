@@ -14,6 +14,7 @@ Signature: Andrew Kim
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Shape.h"
+#include "TwoDimension.h"
 #include "Circle.h"
 #include "Triangle.h"
 
