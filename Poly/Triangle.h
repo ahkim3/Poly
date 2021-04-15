@@ -1,9 +1,9 @@
 #pragma once
-#include "Shape.h"
+#include "TwoDimension.h"
 
 
 class Triangle :
-    public Shape
+    public TwoDimension
 {
 public:
     Triangle(unsigned int, unsigned int);
