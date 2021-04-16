@@ -1,6 +1,6 @@
 /*
 Name: Andrew Kim
-Date: April 15, 2021
+Date: April 16, 2021
 Program: Poly Lab
 
 I hereby certify that this program represents my
@@ -13,7 +13,6 @@ Signature: Andrew Kim
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <Windows.h>
 #include "Shape.h"
 #include "TwoDimension.h"
 #include "Circle.h"
@@ -38,9 +37,11 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(400, 400), "Poly");
 
-    // Test
+    window.setFramerateLimit(1); // Update every 2 seconds
+
+    /* // Test
     sf::CircleShape shape(200.f);
-    shape.setFillColor(sf::Color::Green);
+    shape.setFillColor(sf::Color::Green);*/
 
 
     while (window.isOpen())
@@ -56,18 +57,19 @@ int main()
 
         window.clear();
 
-        window.draw(shape);
+        shapes.at(shapeCount)->draw(window);
+
+        //window.draw(shape);
         
         window.display();
-
-        Sleep(5000); // Pause for 5 seconds
+        sf::sleep(sf::seconds(2)); // Pause for 2 seconds
 
         // Move onto next shape in vector; moves back to beginning of list if
         // at the end
         if (shapeCount < shapes.size() - 1)
-            shapeCount = 0;
-        else
             shapeCount++;
+        else
+            shapeCount = 0;
     }
 
     return 0;
@@ -102,7 +104,7 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             break;
 
         case 2: // Triangle
-            cout << "Plase enter the radius of this triangle: ";
+            cout << "Plase enter the base of this triangle: ";
             cin >> base;
             cout << "Please enter the height of this triangle: ";
             cin >> height;

@@ -8,6 +8,7 @@ class TwoDimension :
 public:
     TwoDimension();
     ~TwoDimension();
+
 protected:
     double area;
 };

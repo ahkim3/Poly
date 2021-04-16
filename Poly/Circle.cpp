@@ -3,7 +3,7 @@
 #include <math.h>
 
 
-Circle::Circle(unsigned int radiusInput)
+Circle::Circle(unsigned const int radiusInput)
 {
 	const double pi = 3.14159265358979323846; // Defines pi
 
@@ -20,6 +20,9 @@ Circle::~Circle()
 }
 
 
-void Circle::draw()
+void Circle::draw(sf::RenderWindow& window)
 {
+	std::cout << "This will draw a circle.\n\n";
+
+
 }

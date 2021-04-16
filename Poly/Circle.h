@@ -1,15 +1,16 @@
 #pragma once
 #include "TwoDimension.h"
+#include <SFML/Graphics.hpp>
 
 
 class Circle :
     public TwoDimension
 {
 public:
-    Circle(unsigned int);
+    Circle(unsigned const int);
     ~Circle();
 
-    void draw();
+    void draw(sf::RenderWindow&);
 
 private:
     unsigned int radius;
