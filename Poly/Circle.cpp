@@ -24,5 +24,6 @@ void Circle::draw(sf::RenderWindow& window)
 {
 	std::cout << "This will draw a circle.\n\n";
 
-
+	sf::CircleShape shape(200.f);
+	window.draw(shape);
 }

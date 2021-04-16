@@ -17,6 +17,7 @@ Signature: Andrew Kim
 #include "TwoDimension.h"
 #include "Circle.h"
 #include "Triangle.h"
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -89,7 +90,7 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
         shapesRemaining--;
 
         // Prompt shape options
-        cout << "Options:\n1) Circle\n2) Triangle\n3) Square\n\n";
+        cout << "Options:\n1) Circle\n2) Triangle\n3) Rectangle\n\n";
         cout << "Please enter the corresponding # to your desired shape: ";
         cin >> shapeType;
 
@@ -112,8 +113,13 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             shapes.push_back(new Triangle(base, height));
             break;
 
-        case 3: // Square
-            // TODO
+        case 3: // Rectangle
+            cout << "Plase enter the base of this rectangle: ";
+            cin >> base;
+            cout << "Please enter the height of this rectangle: ";
+            cin >> height;
+
+            shapes.push_back(new Rectangle(base, height));
             break;
 
         default:

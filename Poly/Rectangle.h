@@ -3,16 +3,16 @@
 #include <SFML/Graphics.hpp>
 
 
-class Triangle :
+class Rectangle :
     public TwoDimension
 {
 public:
-    Triangle(unsigned const int, unsigned const int);
-    ~Triangle();
+    Rectangle(const double, const double);
+    ~Rectangle();
 
     void draw(sf::RenderWindow&);
-
+    
 private:
-    unsigned int base, height;
+    double base, height;
 };
 

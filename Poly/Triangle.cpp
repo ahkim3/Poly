@@ -19,4 +19,7 @@ Triangle::~Triangle()
 void Triangle::draw(sf::RenderWindow& window)
 {
 	std::cout << "This will draw a triangle.\n\n";
+
+	sf::CircleShape shape(200.f, 3);
+	window.draw(shape);
 }
