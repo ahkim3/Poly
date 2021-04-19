@@ -7,12 +7,13 @@ class Triangle :
     public TwoDimension
 {
 public:
-    Triangle(unsigned const int, unsigned const int);
+    Triangle(unsigned const int);
     ~Triangle();
 
     void draw(sf::RenderWindow&);
 
 private:
-    unsigned int base, height;
+    unsigned int radius;
+    sf::CircleShape shape;
 };
 
