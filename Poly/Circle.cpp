@@ -24,5 +24,9 @@ void Circle::draw(sf::RenderWindow& window)
 {
 	std::cout << "This will draw a circle.\n\n";
 
+	shape.setPosition(sf::Vector2f((rand() % (601 - (2 * radius))),
+		(rand() % (601 - (2 * radius)))));
+	shape.setFillColor(sf::Color(newColor(), newColor(), newColor()));
+
 	window.draw(shape);
 }

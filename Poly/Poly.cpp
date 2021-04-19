@@ -28,6 +28,8 @@ int main()
 {
     unsigned int shapesRemaining, shapeCount = 0;
     vector<Shape*> shapes;
+
+    srand((unsigned)time(NULL));
     
     // Determine number of desired shapes
     cout << "Please enter the number of shapes you would like to view: ";
@@ -72,6 +74,10 @@ int main()
         else
             shapeCount = 0;
     }
+
+    // Deallocate memory
+    for (int i = 0; i < shapesRemaining; i++)
+        delete shapes.at(i);
 
     return 0;
 }

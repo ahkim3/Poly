@@ -10,6 +10,8 @@ public:
 
 	virtual void draw(sf::RenderWindow&) = 0;
 
+	int newColor();
+
 protected:
 	unsigned int xPos, yPos;
 };

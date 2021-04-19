@@ -7,13 +7,13 @@ class Rectangle :
     public TwoDimension
 {
 public:
-    Rectangle(const double, const double);
+    Rectangle(unsigned const int, unsigned const int);
     ~Rectangle();
 
     void draw(sf::RenderWindow&);
     
 private:
-    double base, height;
+    unsigned int base, height;
     sf::RectangleShape shape;
 };
 

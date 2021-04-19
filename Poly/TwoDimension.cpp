@@ -3,8 +3,7 @@
 
 TwoDimension::TwoDimension()
 {
-	// TODO: Calculate area
-	area = 1; // Default to 1
+	area = 1; // Default to area of 1
 }
 
 
