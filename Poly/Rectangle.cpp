@@ -20,6 +20,7 @@ Rectangle::~Rectangle()
 
 void Rectangle::draw(sf::RenderWindow& window)
 {
+	// Randomize position and color
 	shape.setPosition(sf::Vector2f((rand() % (601 - base)), 
 		(rand() % (601 - height))));
 	shape.setFillColor(sf::Color(newColor(), newColor(), newColor()));

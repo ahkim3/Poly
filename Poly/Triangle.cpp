@@ -20,6 +20,7 @@ Triangle::~Triangle()
 
 void Triangle::draw(sf::RenderWindow& window)
 {
+	// Randomize position and color
 	shape.setPosition(sf::Vector2f((rand() % (601 - (2 * radius))),
 		(rand() % (601 - (2 * radius)))));
 	shape.setFillColor(sf::Color(newColor(), newColor(), newColor()));
