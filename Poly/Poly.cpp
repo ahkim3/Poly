@@ -38,14 +38,8 @@ int main()
 
     determineShapes(shapes, shapesRemaining);
 
-    sf::RenderWindow window(sf::VideoMode(600, 600), "Poly", sf::Style::Titlebar | sf::Style::Close);
-
-    window.setFramerateLimit(1); // Update every 2 seconds
-
-    /* // Test
-    sf::CircleShape shape(200.f);
-    shape.setFillColor(sf::Color::Green);*/
-
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Poly", 
+        sf::Style::Titlebar | sf::Style::Close);
 
     while (window.isOpen())
     {
@@ -58,13 +52,11 @@ int main()
                 window.close();
         }
 
+        // Draw next frame
         window.clear();
-
         shapes.at(shapeCount)->draw(window);
-
-        //window.draw(shape);
-        
         window.display();
+
         sf::sleep(sf::seconds(2)); // Pause for 2 seconds
 
         // Move onto next shape in vector; moves back to beginning of list if
@@ -104,21 +96,24 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
         switch (shapeType)
         {
         case 1: // Circle
-            cout << "Plase enter the radius of this circle (between 0-300px): ";
+            cout << "Plase enter the radius of this circle "
+                << "(between 0-300px): ";
             cin >> radius;
 
             shapes.push_back(new Circle(radius));
             break;
 
         case 2: // Triangle
-            cout << "Plase enter the radius of this triangle (between 0-300px): ";
+            cout << "Plase enter the radius of this triangle "
+                << "(between 0-300px): ";
             cin >> radius;
 
             shapes.push_back(new Triangle(radius));
             break;
 
         case 3: // Rectangle
-            cout << "Plase enter the base of this rectangle (between 0-600px): ";
+            cout << "Plase enter the base of this rectangle "
+                << "(between 0-600px): ";
             cin >> base;
             cout << "Please enter the height of this rectangle "
                 << "(between 0-600px): ";
