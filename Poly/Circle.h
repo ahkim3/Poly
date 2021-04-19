@@ -14,5 +14,6 @@ public:
 
 private:
     unsigned int radius;
+    sf::CircleShape shape;
 };
 

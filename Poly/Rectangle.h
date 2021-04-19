@@ -14,5 +14,6 @@ public:
     
 private:
     double base, height;
+    sf::RectangleShape shape;
 };
 

@@ -8,6 +8,8 @@ Rectangle::Rectangle(const double baseInput, const double heightInput)
 	base = baseInput;
 	height = heightInput;
 	area = base * height;
+
+	shape.setSize(sf::Vector2f(base, height));
 }
 
 
@@ -20,6 +22,5 @@ void Rectangle::draw(sf::RenderWindow& window)
 {
 	std::cout << "This will draw a rectangle.\n\n";
 
-	sf::RectangleShape shape(sf::Vector2f(base, height));
 	window.draw(shape);
 }

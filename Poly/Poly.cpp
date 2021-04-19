@@ -36,7 +36,7 @@ int main()
 
     determineShapes(shapes, shapesRemaining);
 
-    sf::RenderWindow window(sf::VideoMode(600, 600), "Poly");
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Poly", sf::Style::Titlebar | sf::Style::Close);
 
     window.setFramerateLimit(1); // Update every 2 seconds
 
