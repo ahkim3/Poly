@@ -10,8 +10,6 @@ Circle::Circle(unsigned const int radiusInput)
 	// Circle properties
 	radius = radiusInput;
 	area = pi * pow(radius, 2);
-
-
 }
 
 
@@ -24,6 +22,6 @@ void Circle::draw(sf::RenderWindow& window)
 {
 	std::cout << "This will draw a circle.\n\n";
 
-	sf::CircleShape shape(200.f);
+	sf::CircleShape shape(radius);
 	window.draw(shape);
 }

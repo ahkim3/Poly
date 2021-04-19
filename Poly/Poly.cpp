@@ -1,6 +1,6 @@
 /*
 Name: Andrew Kim
-Date: April 16, 2021
+Date: April 19, 2021
 Program: Poly Lab
 
 I hereby certify that this program represents my
@@ -36,7 +36,7 @@ int main()
 
     determineShapes(shapes, shapesRemaining);
 
-    sf::RenderWindow window(sf::VideoMode(400, 400), "Poly");
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Poly");
 
     window.setFramerateLimit(1); // Update every 2 seconds
 
@@ -98,25 +98,24 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
         switch (shapeType)
         {
         case 1: // Circle
-            cout << "Plase enter the radius of this circle: ";
+            cout << "Plase enter the radius of this circle (between 0-300px): ";
             cin >> radius;
 
             shapes.push_back(new Circle(radius));
             break;
 
         case 2: // Triangle
-            cout << "Plase enter the base of this triangle: ";
-            cin >> base;
-            cout << "Please enter the height of this triangle: ";
-            cin >> height;
+            cout << "Plase enter the radius of this triangle (between 0-300px): ";
+            cin >> radius;
 
-            shapes.push_back(new Triangle(base, height));
+            shapes.push_back(new Triangle(radius));
             break;
 
         case 3: // Rectangle
-            cout << "Plase enter the base of this rectangle: ";
+            cout << "Plase enter the base of this rectangle (between 0-600px): ";
             cin >> base;
-            cout << "Please enter the height of this rectangle: ";
+            cout << "Please enter the height of this rectangle "
+                << "(between 0-600px): ";
             cin >> height;
 
             shapes.push_back(new Rectangle(base, height));
