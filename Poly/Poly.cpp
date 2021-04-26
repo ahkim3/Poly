@@ -78,7 +78,7 @@ int main()
 // Determine user's desired shapes
 void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
 {
-    unsigned int shapeCount = 0, shapeType, radius, base, height;
+    unsigned int shapeCount = 0, shapeType, radius, length, base, height;
 
     // Determine desired shapes
     while (shapesRemaining > 0)
@@ -104,11 +104,11 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             break;
 
         case 2: // Triangle
-            cout << "Plase enter the radius of this triangle "
-                << "(between 0-300px): ";
-            cin >> radius;
+            cout << "Plase enter the side length of this triangle "
+                << "(between 0-600px): ";
+            cin >> length;
 
-            shapes.push_back(new Triangle(radius));
+            shapes.push_back(new Triangle(length));
             break;
 
         case 3: // Rectangle

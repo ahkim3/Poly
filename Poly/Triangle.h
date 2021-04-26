@@ -13,7 +13,7 @@ public:
     void draw(sf::RenderWindow&);
 
 private:
-    unsigned int radius;
-    sf::CircleShape shape;
+    unsigned int length;
+    sf::ConvexShape shape;
 };
 
