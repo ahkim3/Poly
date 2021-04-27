@@ -2,30 +2,18 @@
 #include <math.h>
 
 
-Triangle::Triangle(unsigned const int lengthInput)
+Triangle::Triangle()
 {
-	// Triangle properties
-	length = lengthInput;
-	area = (sqrt(3) * pow(length, 2)) / 4;
-	
+	// Triangle properties; default to equilateral with length 1
+	sideOne = 1;
+	sideTwo = sideOne;
+	sideThree = sideOne;
+	area = (sqrt(3) * pow(sideOne, 2)) / 4; // Calculate area
+
 	shape.setPointCount(3);
-	shape.setPoint(0, sf::Vector2f(length / 2, 0));
-	shape.setPoint(1, sf::Vector2f(0, length));
-	shape.setPoint(2, sf::Vector2f(length, length));
 }
 
 
 Triangle::~Triangle()
 {
-}
-
-
-void Triangle::draw(sf::RenderWindow& window)
-{
-	// Randomize position and color
-	shape.setPosition(sf::Vector2f((rand() % (601 - (length))),
-		(rand() % (601 - (length)))));
-	shape.setFillColor(sf::Color(newColor(), newColor(), newColor()));
-
-	window.draw(shape);
 }

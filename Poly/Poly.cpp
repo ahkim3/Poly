@@ -17,6 +17,9 @@ Signature: Andrew Kim
 #include "TwoDimension.h"
 #include "Circle.h"
 #include "Triangle.h"
+#include "EquilateralTriangle.h"
+#include "IsoscelesTriangle.h"
+#include "ScaleneTriangle.h"
 #include "Rectangle.h"
 
 using namespace std;
@@ -88,7 +91,8 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
         shapesRemaining--;
 
         // Prompt shape options
-        cout << "Options:\n1) Circle\n2) Triangle\n3) Rectangle\n\n";
+        cout << "Options:\n1) Circle\n2) Rectangle\n3) Equilateral Triangle\n"
+            << "4) Isosceles Triangle\n5) Scalene Triangle\n\n";
         cout << "Please enter the corresponding # to your desired shape: ";
         cin >> shapeType;
 
@@ -103,15 +107,7 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             shapes.push_back(new Circle(radius));
             break;
 
-        case 2: // Triangle
-            cout << "Plase enter the side length of this triangle "
-                << "(between 0-600px): ";
-            cin >> length;
-
-            shapes.push_back(new Triangle(length));
-            break;
-
-        case 3: // Rectangle
+        case 2: // Rectangle
             cout << "Plase enter the base of this rectangle "
                 << "(between 0-600px): ";
             cin >> base;
@@ -120,6 +116,33 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             cin >> height;
 
             shapes.push_back(new Rectangle(base, height));
+            break;
+
+        case 3: // Equilateral Triangle
+            cout << "Plase enter the side length of this equilateral triangle "
+                << "(between 0-600px): ";
+            cin >> length;
+
+            shapes.push_back(new EquilateralTriangle(length));
+            break;
+
+        case 4: // Isosceles Triangle
+            cout << "Plase enter the base of this isosceles triangle "
+                << "(between 0-600px): ";
+            cin >> base;
+            cout << "Plase enter the height of this isosceles triangle "
+                << "(between 0-600px): ";
+            cin >> height;
+
+            shapes.push_back(new IsoscelesTriangle(base, height));
+            break;
+
+        case 5: // Scalene Triangle
+            cout << "Plase enter the side length of this scalene triangle "
+                << "(between 0-600px): ";
+            cin >> length;
+
+            shapes.push_back(new ScaleneTriangle(length));
             break;
 
         default:

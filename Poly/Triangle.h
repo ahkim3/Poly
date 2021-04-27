@@ -7,13 +7,11 @@ class Triangle :
     public TwoDimension
 {
 public:
-    Triangle(unsigned const int);
+    Triangle();
     ~Triangle();
 
-    void draw(sf::RenderWindow&);
-
-private:
-    unsigned int length;
+protected:
+    unsigned int sideOne, sideTwo, sideThree;
     sf::ConvexShape shape;
 };
 
