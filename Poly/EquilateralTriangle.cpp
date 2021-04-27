@@ -28,8 +28,8 @@ EquilateralTriangle::~EquilateralTriangle()
 void EquilateralTriangle::draw(sf::RenderWindow& window)
 {
 	// Randomize position and color
-	shape.setPosition(sf::Vector2f((rand() % (601 - (length))),
-		(rand() % (601 - (length)))));
+	shape.setPosition(sf::Vector2f((rand() % (601 - length)),
+		(rand() % (601 - length))));
 	shape.setFillColor(sf::Color(newColor(), newColor(), newColor()));
 
 	window.draw(shape);

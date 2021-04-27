@@ -71,7 +71,7 @@ int main()
     }
 
     // Deallocate memory
-    for (int i = 0; i < shapesRemaining; i++)
+    for (unsigned int i = 0; i < shapesRemaining; i++)
         delete shapes.at(i);
 
     return 0;
@@ -82,6 +82,8 @@ int main()
 void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
 {
     unsigned int shapeCount = 0, shapeType, radius, length, base, height;
+    float firstSide, secondSide, thirdSide;
+    bool validScalene;
 
     // Determine desired shapes
     while (shapesRemaining > 0)
@@ -138,11 +140,36 @@ void determineShapes(vector<Shape*>& shapes, unsigned int shapesRemaining)
             break;
 
         case 5: // Scalene Triangle
-            cout << "Plase enter the side length of this scalene triangle "
-                << "(between 0-600px): ";
-            cin >> length;
 
-            shapes.push_back(new ScaleneTriangle(length));
+            // Loop until valid triangle dimensions are provided
+            do
+            {
+                cout << "Plase enter the first side length of this scalene "
+                    << "triangle (between 0-600px): ";
+                cin >> firstSide;
+                cout << "Plase enter the second side length of this scalene "
+                    << "triangle (between 0-600px): ";
+                cin >> secondSide;
+                cout << "Plase enter the third side length of this scalene "
+                    << "triangle (between 0-600px): ";
+                cin >> thirdSide;
+
+                // Check whether dimensions create a valid triangle
+                if ((firstSide + secondSide) <= thirdSide ||
+                    (firstSide + thirdSide) <= secondSide ||
+                    (secondSide + thirdSide) <= firstSide)
+                {
+                    validScalene = false;
+                    cout << "\nPlease enter dimensions for a valid scalene "
+                        << "triangle." << endl << endl;
+                }
+                else
+                    validScalene = true;
+            } while (!validScalene);
+
+
+            shapes.push_back(new ScaleneTriangle(firstSide, secondSide, 
+                thirdSide));
             break;
 
         default:

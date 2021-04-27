@@ -7,13 +7,12 @@ class ScaleneTriangle :
     public Triangle
 {
 public:
-    ScaleneTriangle(unsigned const int);
+    ScaleneTriangle(float, float, float);
     ~ScaleneTriangle();
 
     void draw(sf::RenderWindow&);
 
 private:
-    unsigned int length;
-    //sf::ConvexShape shape;
+    unsigned int base, height;
 };
 

@@ -4,7 +4,7 @@
 
 Triangle::Triangle()
 {
-	// Triangle properties; default to equilateral with length 1
+	// Triangle properties; default to equilateral with lengths 1
 	sideOne = 1;
 	sideTwo = sideOne;
 	sideThree = sideOne;
